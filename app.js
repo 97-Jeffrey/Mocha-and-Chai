@@ -1,3 +1,16 @@
-module.exports = function(){
-  return 'hello';
-}
+var moveZeroes = function(nums) {
+    
+  let  anchor = 0;
+  
+  for(let explorer=0; explorer<nums.length; explorer++){
+      if(nums[explorer] !==0){
+             let num = nums[anchor];
+             nums[anchor] = nums[explorer];
+             nums[explorer] = num;
+             anchor++; 
+    }
+  }
+  return nums;
+};
+
+module.exports = moveZeroes;
